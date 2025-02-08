@@ -5,6 +5,10 @@ pipeline {
         NODE_VERSION = "22"
     }
 
+    tools {
+        nodejs 'NodeJS'  // Ensure this matches the name in Global Tool Configuration
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -18,6 +22,7 @@ pipeline {
                     def nodeHome = tool name: 'NodeJS', type: 'hudson.plugins.nodejs.tools.NodeJSInstallation'
                     env.PATH = "${nodeHome}/bin:${env.PATH}"
                 }
+                sh 'node -v'  // Verify Node.js version
             }
         }
 
