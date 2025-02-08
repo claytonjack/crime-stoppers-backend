@@ -19,5 +19,5 @@ app.post('/api/test', (req, res) => {
 });
 
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running at http://10.10.10.18:${port}`);
+  console.log(`Server running at https://codeagainstcrime.com:${port}`);
 });
